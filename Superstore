@@ -1,0 +1,27 @@
+For example, using the e-commerce data of SUPERSTORE, a data analyst could answer business questions like:
+
+    What items were sold?
+    How many items were sold?
+    How long do users spend on the SUPERSTORE website?
+    How long on average does it take for a customer to make a purchase on the SUPERSTORE website? 
+
+How long do users spend on the SUPERSTORE website?
+SELECT SUM(session_duration)
+FROM ecom_data;
+
+How long do users spend on the SUPERSTORE website per item?
+SELECT SUM(session_duration), item_name
+FROM ecom_data
+GROUP BY item_name
+
+Order the items by price:
+SELECT *
+FROM superstore
+ORDER BY price;
+
+SELECT SUM(price)
+FROM superstore
+WHERE price>=300
+GROUP BY item_name;
+
+Can also show a statistic about the item prices, like a sum, average, minimum, maximum, or count using the list of aggregation functions (SUM, AVG, MIN, MAX and COUNT)
